@@ -1,0 +1,22 @@
+    <!doctype html>
+    <html ng-app="MeuModulo">
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+      </head>
+      <body>
+      <div ng-controller="CtrlModulo">
+        Meu nome é {{nome}}.<br> Natural de {{cidade}}.<br> Do Estado do {{estado}}.
+      </div>
+
+        <script>
+      //função para o "S" receber o $scope
+        angular.module("MeuModulo", [])
+        .controller('CtrlModulo', ['$scope',  function(s) {
+           s.nome = "lucas";
+           s.cidade = "Londrina";
+           s.estado = "Paraná";
+      }] );
+
+        </script>       
+      </body>
+    </html>

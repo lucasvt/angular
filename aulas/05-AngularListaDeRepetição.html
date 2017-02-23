@@ -1,0 +1,33 @@
+    <!doctype html>
+    <html ng-app>
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+      </head>
+      <body>
+        <div ng-controller="CtrlLista">
+          <ul>
+            <li ng-repeat="x in pessoas">
+            {{x.nome}},{{x.cidade}} 
+            </li>
+          </ul>
+        </div>
+        <script>
+         var CtrlLista = function($scope){
+          $scope.pessoas = [
+            {nome: "maria", cidade:"São Paulo"},
+            {nome: "João", cidade:"feddcd"},
+            {nome: "Jose", cidade:"Swefdc"},
+            {nome: "Marta", cidade:"cdcdd"},
+            {nome: "Dirceu", cidade:"Sdcddd"},
+            {nome: "maria", cidade:"São Paulo"},
+            {nome: "João", cidade:"feddcd"},
+            {nome: "Jose", cidade:"Swefdc"},
+            {nome: "Marta", cidade:"cdcdd"},
+            {nome: "Dirceu", cidade:"Sdcddd"}
+          ];
+         };
+
+        </script>       
+      </body>
+    </html>
+

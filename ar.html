@@ -1,0 +1,121 @@
+    <!doctype html >
+    <html  charset=UTF-8>
+      <head>
+        <meta charset="utf-8">
+        <title>Pessoas</title>
+          <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+          <!-- Optional theme -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+          <!-- Latest compiled and minified JavaScript -->
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      </head>
+      <body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+      <!--- ------------------------------------- Botão do MODAL - BEGIN -------------------------------------- -->
+      <a class="btn default button-tiny-deter" data-toggle="modal"  data-href="#nomeDoModal" href="#nomeDoModal" ><i class="fa fa-fw fa-edit"></i>
+          Horários</a>
+
+
+
+
+<!--- -------------------------------------  MODAL - BEGIN -------------------------------------- -->
+            <div class="modal fade in" id="nomeDoModal" name="nomeDoModal" tabindex="-1" role="dialog" aria-hidden="false" style="display:none;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Horário</h4>
+                        </div>
+                        <div class="modal-body">
+                            @if(isset($errors) && count($errors) > 0)
+                                <div>
+                                    @foreach($errors ->all() as $errors)
+                                        $errors<br>
+                                    @endforeach
+                                </div>
+                        @endif
+                        <!------------------------- COLUNA 1 --------------------------->
+                            <div class="row">
+
+                                <div class="col-xs-12">
+                                    <br>
+                                    <div class="table-responsive">
+                                        <table style="background-color:#fff" class="pure-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>E-Mail</th>
+                                                <th>CPF</th>
+                                                <th>Sexo</th>
+                                                <th>Telefone</th>
+                                                <th>Celular</th>
+                                                <th>Cadastro</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody id="myTable">
+                                            <tr>
+                                                <td><?= $user_name ?> <?= $user_lastname; ?></td>
+                                                <td><?= $user_email ?></td>
+                                                <td><?= $user_document ?></td>
+                                                <td><?= ($user_genre == 1 ? 'Masculino' : ($user_genre == 2 ? 'Feminino' : null)); ?></td>
+                                                <td><?= $user_telephone ?></td>
+                                                <td><?= $user_cell ?></td>
+                                                <td><?= date('d/m/Y H\hi' , strtotime($user_registration)) ?></td>
+                                            </tbody>
+                                        </table>
+                                    </div><!--end of .table-responsive-->
+                                </div>
+
+                                <!-- /.input group -->
+                                <div class="modal-footer">
+                                    <button type="submit" id="xxxx" onClick="notificação();" name="enviar" value="Enviar"
+                                            class="btn btn-primary"><i class="fa fa-fw fa-plus-square"
+                                                                       data-name="check-circle" data-size="28"
+                                                                       data-loop="true" data-c="#fff"
+                                                                       data-hc="white"></i><br/>Salvar
+                                    </button>
+
+                                    <button type="submit" id="xxxx" onClick="xxxx();" name="enviar" value="Enviar"
+                                            class="btn btn-primary"><i class="fa fa-fw fa-plus-square"
+                                                                       data-name="check-circle" data-size="28"
+                                                                       data-loop="true" data-c="#fff"
+                                                                       data-hc="white"></i><br/>Confirmar
+                                    </button>
+
+                                    <button type="submit" id="xxxx" onClick="xxxx();" name="enviar" value="Enviar"
+                                            class="btn btn-primary"><i class="fa fa-fw fa-plus-square"
+                                                                       data-name="check-circle" data-size="28"
+                                                                       data-loop="true" data-c="#fff"
+                                                                       data-hc="white"></i><br/>Fechar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+      </body>
+    </html>
+
